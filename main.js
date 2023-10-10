@@ -24,7 +24,22 @@ function createBoard(width, height) {
 
 // 4. Pieza del Jugador
 
-const colors = ["yellow", "red", "blue", "green"];
+const colors = [
+  "yellow",
+  "red",
+  "blue",
+  "green",
+  "maroon",
+  "purple",
+  "olive",
+  "aqua",
+  "orange",
+  "aquamarine",
+  "chocolate",
+  "darkblue",
+  "darkgrey",
+  "indigo",
+];
 
 const piece = {
   position: { x: 5, y: 5 },

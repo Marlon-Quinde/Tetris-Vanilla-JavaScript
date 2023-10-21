@@ -142,14 +142,16 @@ function update(time = 0) {
 }
 
 function draw() {
-  context.fillStyle = "#000";
-  context.fillRect(0, 0, canvas.width, canvas.height);
-
   board.forEach((row, y) => {
     row.forEach(({ value, color }, x) => {
       if (value === 1) {
         context.fillStyle = color;
-        context.fillRect(x, y, 1, 1);
+        context.fillRect(x, y, 0.9, 0.9);
+      } else {
+        context.fillStyle = "#E7E5E4";
+        // context.fillStyle = "black";
+        context.fillRect(x, y, 0.9, 0.9);
+        rellenarColores(context, 0.8, x, y);
       }
     });
   });
@@ -164,12 +166,26 @@ function draw() {
 
         context.fillStyle = piece.color;
 
-        context.fillRect(x + piece.position.x, y + piece.position.y, 1, 1);
+        context.fillRect(x + piece.position.x, y + piece.position.y, 0.9, 0.9);
+
+        // context.fillRect(x + piece.position.x, y + piece.position.y, 0.1, 0.1);
       }
     });
   });
 
   $score.innerText = score;
+}
+
+function rellenarColores(context, tamanio, x, y) {
+  context.fillStyle = "white";
+  for (let contador = 0; contador < tamanio; contador + 0.1) {
+    context.fillRect(x + contador, y + -0.1, 0.1, 0.1);
+    contador = contador + 0.1;
+  }
+  for (let contador = -0.1; contador < tamanio; contador + 0.1) {
+    context.fillRect(x + -0.1, y + contador, 0.1, 0.1);
+    contador = contador + 0.1;
+  }
 }
 
 document.addEventListener("keydown", (event) => {
@@ -178,14 +194,12 @@ document.addEventListener("keydown", (event) => {
     console.log(checkCollision());
     if (checkCollision()) {
       piece.position.x++;
-      solidifyPiece();
     }
   }
   if (event.key === EVEN_MOVEMENTS.RIGHT) {
     piece.position.x++;
     if (checkCollision()) {
       piece.position.x--;
-      solidifyPiece();
     }
   }
   if (event.key === EVEN_MOVEMENTS.DOWN) {

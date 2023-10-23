@@ -25,9 +25,6 @@ npm run dev
 ### Game Start
 ![image](https://github.com/Marlon-Quinde/Tetris-Vanilla-JavaScript/assets/71990962/9b1ecc54-36f2-400b-9ed5-b164017f4b00)
 
-### Game v1
-![image](https://github.com/Marlon-Quinde/Tetris-Vanilla-JavaScript/assets/71990962/dcfe8c37-72c2-4e4a-a8d8-5b0894ed049c)
-
 ### Game v2
 ![image](https://github.com/Marlon-Quinde/Tetris-Vanilla-JavaScript/assets/71990962/7402bbbb-c9ea-46b0-8612-9b7a13a52bc5)
 
